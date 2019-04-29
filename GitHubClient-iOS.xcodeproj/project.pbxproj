@@ -16,6 +16,7 @@
 		A7BBF12F2275B52600D52706 /* GitHubClient_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BBF12E2275B52600D52706 /* GitHubClient_iOSTests.swift */; };
 		A7BBF13A2275B52600D52706 /* GitHubClient_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BBF1392275B52600D52706 /* GitHubClient_iOSUITests.swift */; };
 		A7BBF148227721B300D52706 /* GitHubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BBF147227721B300D52706 /* GitHubViewController.swift */; };
+		A7BBF14A2277517400D52706 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BBF1492277517400D52706 /* APIClient.swift */; };
 		F10ED5741EEA229332E5D7D2 /* Pods_GitHubClient_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 406076AB5BF4E9367AB6C3D4 /* Pods_GitHubClient_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		A7BBF1392275B52600D52706 /* GitHubClient_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubClient_iOSUITests.swift; sourceTree = "<group>"; };
 		A7BBF13B2275B52600D52706 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7BBF147227721B300D52706 /* GitHubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubViewController.swift; sourceTree = "<group>"; };
+		A7BBF1492277517400D52706 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		ABD16FC1265DAC9675B11998 /* Pods_GitHubClient_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitHubClient_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1005FEC2CF6AEFB417E3CA /* Pods-GitHubClient-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubClient-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubClient-iOSTests/Pods-GitHubClient-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		F983F0DE6583A0A342BAB74A /* Pods-GitHubClient-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitHubClient-iOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GitHubClient-iOSUITests/Pods-GitHubClient-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				A7BBF1222275B52600D52706 /* LaunchScreen.storyboard */,
 				A7BBF1252275B52600D52706 /* Info.plist */,
 				A7BBF147227721B300D52706 /* GitHubViewController.swift */,
+				A7BBF1492277517400D52706 /* APIClient.swift */,
 			);
 			path = "GitHubClient-iOS";
 			sourceTree = "<group>";
@@ -303,12 +306,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GitHubClient-iOS/Pods-GitHubClient-iOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
@@ -381,6 +388,7 @@
 			files = (
 				A7BBF148227721B300D52706 /* GitHubViewController.swift in Sources */,
 				A7BBF11A2275B52400D52706 /* AppDelegate.swift in Sources */,
+				A7BBF14A2277517400D52706 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

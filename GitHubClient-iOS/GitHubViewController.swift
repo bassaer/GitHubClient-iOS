@@ -11,37 +11,30 @@ import RxSwift
 import RxCocoa
 
 
-class GitHubViewController: UIViewController, UITableViewDelegate {
+class GitHubViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
 
     let disposeBag = DisposeBag()
     
+    let client = APIClient()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let items = Observable.just(
-            (0..<30).map{"\($0)"}
-        )
+        let repositories = client.create(url: "https://api.github.com/users/bassaer/repos")
         
-
-        items
+        repositories
             .bind(to: tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) { (row, element, cell) in
-                cell.textLabel?.text = "\(element) @ row \(row)"
+                cell.textLabel?.text = element.name
+                cell.detailTextLabel?.text = element.language
             }
             .disposed(by: disposeBag)
         
         tableView.rx
-            .modelSelected(String.self)
+            .modelSelected(RepoEntity.self)
             .subscribe(onNext: { value in
                 log.debug("tapped \(value)")
-            })
-            .disposed(by: disposeBag)
-        
-        tableView.rx
-            .itemAccessoryButtonTapped
-            .subscribe(onNext: { indexPath in
-                log.debug("Tapped detail @ \(indexPath.section),\(indexPath.row)")
             })
             .disposed(by: disposeBag)
     }
