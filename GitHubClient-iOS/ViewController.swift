@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import RxSwift
 
-class ViewController: UIViewController {
-
+class GitHubViewController: ViewController,  {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    }
+    
 }
 

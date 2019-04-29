@@ -1,0 +1,25 @@
+PODS:
+  - RxCocoa (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxSwift (4.5.0)
+  - SwiftyBeaver (1.7.0)
+
+DEPENDENCIES:
+  - RxCocoa (~> 4.0)
+  - RxSwift (~> 4.0)
+  - SwiftyBeaver
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - RxCocoa
+    - RxSwift
+    - SwiftyBeaver
+
+SPEC CHECKSUMS:
+  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  SwiftyBeaver: 4cc0080d2e23f980652e28978db11a5c9da39165
+
+PODFILE CHECKSUM: d0ecac2442f79d6c808cd74febf3369a1a5dfd38
+
+COCOAPODS: 1.5.3

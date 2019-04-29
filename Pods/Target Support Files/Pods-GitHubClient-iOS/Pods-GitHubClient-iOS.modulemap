@@ -1,0 +1,6 @@
+framework module Pods_GitHubClient_iOS {
+  umbrella header "Pods-GitHubClient-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
