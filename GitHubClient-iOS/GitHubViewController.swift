@@ -14,6 +14,8 @@ import RxCocoa
 
 class GitHubViewController: UIViewController {
     
+    let url = "https://api.github.com/users/bassaer/repos?sort=pushed"
+    
     @IBOutlet weak var tableView: UITableView!
     var activityIndicatorView = UIActivityIndicatorView()
     let disposeBag = DisposeBag()
@@ -23,7 +25,7 @@ class GitHubViewController: UIViewController {
         super.viewDidLoad()
         
         let indicator = ActivityIndicator()
-        let repos = client.create(url: "https://api.github.com/users/bassaer/repos")
+        let repos = client.create(url: self.url)
             .trackActivity(indicator)
 
         activityIndicatorView.center = view.center
