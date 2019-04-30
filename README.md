@@ -1,3 +1,3 @@
 # GitHubClient-iOS
 
-![screen]("https://github.com/bassaer/GitHubClient-iOS/blob/master/screen.png")
+![screen]("https://raw.githubusercontent.com/bassaer/GitHubClient-iOS/master/screen.png")
