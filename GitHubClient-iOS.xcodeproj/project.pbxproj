@@ -310,6 +310,7 @@
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwiftUtilities/RxSwiftUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -318,6 +319,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

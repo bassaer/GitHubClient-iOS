@@ -8,34 +8,47 @@
 
 import UIKit
 import RxSwift
+import RxSwiftUtilities
 import RxCocoa
 
 
 class GitHubViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-
+    var activityIndicatorView = UIActivityIndicatorView()
     let disposeBag = DisposeBag()
-    
     let client = APIClient()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let repositories = client.create(url: "https://api.github.com/users/bassaer/repos")
+        let indicator = ActivityIndicator()
+        let repos = client.create(url: "https://api.github.com/users/bassaer/repos")
+            .trackActivity(indicator)
+
+        activityIndicatorView.center = view.center
+        activityIndicatorView.style = .whiteLarge
+        activityIndicatorView.color = .green
         
-        repositories
+        view.addSubview(activityIndicatorView)
+        
+        indicator.asDriver()
+            .drive(activityIndicatorView.rx.isAnimating)
+            .disposed(by: disposeBag)
+        
+        repos
             .bind(to: tableView.rx.items(cellIdentifier: "Cell", cellType: UITableViewCell.self)) { (row, element, cell) in
                 cell.textLabel?.text = element.name
                 cell.detailTextLabel?.text = element.language
             }
             .disposed(by: disposeBag)
-        
+
         tableView.rx
             .modelSelected(RepoEntity.self)
-            .subscribe(onNext: { value in
-                log.debug("tapped \(value)")
-            })
-            .disposed(by: disposeBag)
+            .subscribe(
+                onNext: { value in
+                    log.debug("tapped \(value)")
+                })
+           .disposed(by: disposeBag)
     }
 }
