@@ -28,26 +28,7 @@ struct RepoEntity: Mappable {
 class APIClient {
     
     private let disposeBag = DisposeBag()
-    
-    func call() {
-       create(url: "https://api.github.com/users/bassaer/repos")
-        .subscribe(
-            onNext: { entites in
-                for entity in entites {
-                    log.debug(entity.name!)
-                }
-            },
-            onError: { error in
-                log.debug("Error!!!")
-                log.debug(error.localizedDescription)
-            },
-            onCompleted: {
-                log.debug("Completed!!!")
-            }
-        )
-        .disposed(by: disposeBag)
-    }
-    
+
     func create(url: String) -> Observable<[RepoEntity]> {
         return Observable<[RepoEntity]>.create { observer in
             let request = Alamofire.request(url).responseJSON { response in
@@ -59,6 +40,7 @@ class APIClient {
                 case .failure(let error):
                     observer.onError(error)
                 }
+                observer.onCompleted()
             }
             return Disposables.create {request.cancel()}
         }

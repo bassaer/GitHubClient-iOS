@@ -4,6 +4,9 @@ PODS:
   - RxCocoa (4.5.0):
     - RxSwift (>= 4.4.2, ~> 4.4)
   - RxSwift (4.5.0)
+  - RxSwiftUtilities (2.1.0):
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
   - SwiftyBeaver (1.7.0)
 
 DEPENDENCIES:
@@ -11,6 +14,7 @@ DEPENDENCIES:
   - ObjectMapper (~> 3.4)
   - RxCocoa (~> 4.0)
   - RxSwift (~> 4.0)
+  - RxSwiftUtilities
   - SwiftyBeaver
 
 SPEC REPOS:
@@ -19,6 +23,7 @@ SPEC REPOS:
     - ObjectMapper
     - RxCocoa
     - RxSwift
+    - RxSwiftUtilities
     - SwiftyBeaver
 
 SPEC CHECKSUMS:
@@ -26,8 +31,9 @@ SPEC CHECKSUMS:
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  RxSwiftUtilities: b486df7454cc867c3ea626ce24110511159e7044
   SwiftyBeaver: 4cc0080d2e23f980652e28978db11a5c9da39165
 
-PODFILE CHECKSUM: c6ecb4fe9393bfcb15f44fafa9d7ff13b0ba77db
+PODFILE CHECKSUM: 3e7b3dec92516cb85ed78a884916a65e30b4384b
 
 COCOAPODS: 1.5.3
